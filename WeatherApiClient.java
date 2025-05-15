@@ -43,7 +43,9 @@ public class WeatherApiClient {
                 for (int i = 0; i < timeDefinesArray.length(); i++) {
                     String dateTime = timeDefinesArray.getString(i);
                     String weather = weathersArray.getString(i);
-                    forecasts.add(new WeatherForecast(dateTime, weather));
+                    forecasts.add(new WeatherForecast(
+                            java.time.LocalDateTime.parse(dateTime, java.time.format.DateTimeFormatter.ISO_DATE_TIME),
+                            weather));
                 }
             } else {
                 throw new IOException("データの取得に失敗しました！");

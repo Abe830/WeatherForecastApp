@@ -1,13 +1,15 @@
+import java.time.LocalDateTime;
+
 public class WeatherForecast {
-    private final String dateTime;
+    private final LocalDateTime dateTime;
     private final String weather;
 
-    public WeatherForecast(String dateTime, String weather) {
+    public WeatherForecast(LocalDateTime dateTime, String weather) {
         this.dateTime = dateTime;
         this.weather = weather;
     }
 
-    public String getDateTime() {
+    public LocalDateTime getDateTime() {
         return dateTime;
     }
 
